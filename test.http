@@ -1,0 +1,19 @@
+
+
+###
+GET http://localhost:3000/qr/tel:81234567
+
+###
+GET http://localhost:3000/qr/tel:8123567?ec_level=L&type=pdf
+
+###
+GET http://localhost:3000/qr-async/tel:81234567
+
+###
+GET http://localhost:3000/qr-async/tel:8123567?ec_level=L&type=png
+
+###
+//Get http://localhost:3000/qr/Happy_birthday！
+
+###
+post http://localhost:3000/qr-async
