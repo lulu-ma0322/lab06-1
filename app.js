@@ -20,7 +20,7 @@ const getRespType = (type) => {
 	}
 	return "image/png";
 };
-
+//test
 app.get("/qr-async/:data", async (req, res) => {
 	try {
 		let options = { type: "png", ...req.query };
