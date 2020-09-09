@@ -4,6 +4,8 @@ const qr = require("qr-image");
 const fs = require("fs");
 const bodyparser = require("body-parser");
 const { v4: uuidv4 } = require("uuid");
+const bodyParser = require("body-parser");
+const { Router } = require("express");
 
 const app = express();
 // app.use(express.static(path.join(__dirname, "qr")));
@@ -32,7 +34,12 @@ app.get("/qr-async/:data", async (req, res) => {
 		console.log(err.stack);
 		res.status(500).send(err);
 	}
-}).post("/qr-async", async (req, res) => {
+});
+
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
+app.post("/qr-async", async (req, res) => {
 	try {
 		let options = { type: "png", ...req.query };
 		const code = await qr.image(req.params.data, options);
